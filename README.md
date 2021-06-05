@@ -1,4 +1,4 @@
-# ising_model
+# Іsing model
 ## Installation
 Install Node js from official site https://nodejs.org/en/download/
 
