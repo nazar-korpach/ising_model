@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
-    "start": "./node_modules/typescript/bin/tsc && node dist/index.js"
+    "start": "npm run build && npm run run",
+    "build": "./node_modules/.bin/tsc && ./node_modules/.bin/copyfiles -u 1 src/**/*.html src/**/*.css dist/",
+    "run": "./node_modules/.bin/electron ./dist"
   },
   "repository": {
     "type": "git",
@@ -17,6 +20,11 @@
   },
   "homepage": "https://github.com/nazar-korpach/ising_model#readme",
   "devDependencies": {
+    "copyfiles": "^2.4.1",
     "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "@types/electron": "^1.6.10",
+    "electron": "^13.1.1"
   }
 }
