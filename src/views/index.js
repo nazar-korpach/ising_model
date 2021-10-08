@@ -10,7 +10,7 @@ const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 
 const draw = (frame) => {
-	const imageBytes = new Uint8ClampedArray(160000)
+	const imageBytes = new Uint8ClampedArray(4 * 160000)
 	for (let i = 0; i < imageBytes.length; i += 4) {
 		const j = (frame[i/4]+1)/2;
 		imageBytes[i + 0] = j*100;  // R value
@@ -20,7 +20,7 @@ const draw = (frame) => {
 	}
 	
 	  // Initialize a new ImageData object
-	let imageData = new ImageData(imageBytes, 200, 200);
+	let imageData = new ImageData(imageBytes, 400, 400);
 	context.putImageData(imageData, 0, 0)
 }
 

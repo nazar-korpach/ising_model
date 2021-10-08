@@ -9,7 +9,7 @@ export class Model {
 	private expression: string
 	private size: number
 	private T: number
-	private fieldMap: number[]
+	public fieldMap: number[]
 
 	constructor(){}
 
@@ -49,7 +49,7 @@ export class Model {
 									this.matrix[ this.down(i) ] + 
 									this.matrix[ this.left(i) ] + 
 									this.matrix[ this.right(i)] + 
-									this.fieldMap[i] * this.matrix[ this.up(i)] + this.matrix[ this.down(i) ]);
+									this.fieldMap[i] * (this.matrix[ this.up(i)] + this.matrix[ this.down(i) ]));
 	}
 
 	up(i: number): number{
