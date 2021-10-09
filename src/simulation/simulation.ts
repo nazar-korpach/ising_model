@@ -10,7 +10,7 @@ export class Simulation {
     private outputStream: WebContents; 
 
     private T = 2.27
-    private SIZE = 200;
+    private SIZE = 400;
     private EXPRESSION = "0 * x + 0 * y"
 
     private executor: Worker
