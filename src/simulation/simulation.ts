@@ -20,16 +20,24 @@ export class Simulation {
     constructor(){}
 
     public async init() {
-        this.outputStream = await this.connect();
+        this.outputStream = await this.connectToApp();
+        this.initAppConnection()
 
         this.initWorker();
     }
 
-    private connect() {
+    private connectToApp() {
         return new Promise<WebContents>( (res, rej) => {
-            ipcMain.on("view:sync", (event) => {
+            this.inputStream.on("view:sync", (event) => {
                 res(event.sender);
             })
+        })
+    }
+
+    private initAppConnection() {
+        this.inputStream.on("view:start", (event, data) => {
+            ({T: this.T, EXPRESSION: this.EXPRESSION} = data);
+            this.startLoop();
         })
     }
 

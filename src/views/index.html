@@ -6,8 +6,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 </head>
+<style type="text/css"> 
+    #rightbox{
+        margin-left: 45%;
+		position: fixed;
+	}
+	#leftbox{
+		float:left;
+	}
+	</style> 
 <body>
-	<canvas id="canvas" width="400" height="400"></canvas>
+	<div id="rightbox">
+		<canvas id="canvas" width="400" height="400"></canvas>
+	</div>
+	<div id="leftbox">
+		<button onclick="onStart()">start</button>
+		<h3>Temperature</h3>
+		<input type="number" id="T_input" value=2.27>
+		<h3>Field strength expression</h3>
+		<input type="text" id="EXPRESSION_input" value="0 * x + 0 * y">
+	</div>	
 </body>
 <script type="text/javascript" src="./index.js">
 </script>

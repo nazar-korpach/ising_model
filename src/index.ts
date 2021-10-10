@@ -14,7 +14,7 @@ const createWindow =  () => {
 	})
   
 	win.loadFile('views/index.html');
-	win.webContents.openDevTools();
+	// win.webContents.openDevTools();
 }
 
 app.on('activate', () => {
